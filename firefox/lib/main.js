@@ -16,7 +16,7 @@ exports.main = function() {
 	pageMod.PageMod({
 		include: "http://exhentai.org*",
 		contentScriptWhen: "end",
-		contentScriptFile: [self.data.url("redirect.js")]
+		contentScriptFile: [self.data.url("jquery.js"), self.data.url("redirect.js")]
 	});
 
     	pageMod.PageMod({
