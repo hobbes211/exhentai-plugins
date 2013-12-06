@@ -1,17 +1,26 @@
 //sdk requirements
-//make sure all api's are mobile compatible
-
 	var pageMod = require("sdk/page-mod");
 	var store = require("sdk/simple-storage");
 	var request = require("sdk/request").Request;
 	var notify = require("sdk/notifications");	
+	var widgets = require("sdk/widget");
 	var tabs = require("sdk/tabs");
 	var data = require("sdk/self").data;
 	var self = this;	
 
 //main
-
 exports.main = function() {
+
+	/* going to add a widget, its not needed atm though
+	var widget = widgets.Widget({
+		id: "haruhichan-link",
+		label: "haruhichan website",
+		contentURL: self.data.url("sad.ico"),
+		onClick: function() {
+			tabs.open("http://haruhichan.com/");
+	  	}
+	});
+	*/
 
 	pageMod.PageMod({
 		include: "http://exhentai.org*",
