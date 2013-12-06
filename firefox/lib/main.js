@@ -1,6 +1,5 @@
 //sdk requirements
 //make sure all api's are mobile compatible
-
 	var pageMod = require("sdk/page-mod");
 	var store = require("sdk/simple-storage");
 	var request = require("sdk/request").Request;
@@ -10,19 +9,19 @@
 	var self = this;	
 
 //main
-
 exports.main = function() {
 
 	pageMod.PageMod({
 		include: "http://exhentai.org*",
 		contentScriptWhen: "end",
-		contentScriptFile: [self.data.url("jquery.js"), self.data.url("redirect.js")]
+		contentScriptFile: [self.data.url("js/jquery.js"), self.data.url("js/redirect.js")]
 	});
 
     	pageMod.PageMod({
 		include: "http://exhentai.org/login",
+		contentStyleFile: [self.data.url("css/bootstrap.min.css"), self.data.url("css/bootstrap-theme.min.css"), self.data.url("css/login.css")],   
 		contentScriptWhen: "end",
-		contentScriptFile: [self.data.url("jquery.js"), self.data.url("exhentai.js")],
+		contentScriptFile: [self.data.url("js/jquery.js"), self.data.url("js/exhentai.js")],
 		onAttach: function(worker) {
 	
 		// Username Save Stuff
